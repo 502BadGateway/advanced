@@ -1,5 +1,5 @@
 from Tkinter import *
-import time # imports the time moduale
+import time
 import random
 
 arena_list = [[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\
@@ -58,7 +58,8 @@ def generate_big_obstacle(arena_list):
         x_coord1 = x_coord0 + 40
         y_coord1 = y_coord0 + 40
         obstacle = arena.create_rectangle(x_coord0, y_coord0, x_coord1, y_coord1, fill = "green", outline = "black")
-        
+        arena.update()
+        time.sleep(0.1)
     else:
         generate_big_obstacle(arena_list)
     return arena_list
@@ -66,12 +67,11 @@ def generate_big_obstacle(arena_list):
 
 for i in range(0,50):
     generate_obstacle(arena_list)
-    time.sleep(0.5)
     arena.update()
+    
 
 for i in range(0,5):
     generate_big_obstacle(arena_list)
-    time.sleep(0.5)
     arena.update()
 
 print arena_list
