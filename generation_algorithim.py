@@ -48,7 +48,7 @@ def generate_obstacle(arena_list):
 def generate_big_obstacle(arena_list):
     x_list = random.randint(0,24)
     y_list = random.randint(0,24)
-    if(x_list < 23 and y_list < 23 and arena_list[x_list][y_list] == 0 and arena_list[x_list + 1][y_list] == 0 and arena_list[x_list][y_list + 1] and arena_list[x_list + 1][y_list + 1]):
+    if(x_list < 23 and y_list < 23 and arena_list[x_list][y_list] == 0 and arena_list[x_list + 1][y_list] == 0 and arena_list[x_list][y_list + 1] == 0 and arena_list[x_list + 1][y_list + 1] == 0):
         arena_list[x_list][y_list] = 2
         arena_list[x_list + 1][y_list] = 2
         arena_list[x_list][y_list + 1] = 2
