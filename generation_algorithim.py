@@ -64,23 +64,24 @@ def generate_big_obstacle(arena_list):
         generate_big_obstacle(arena_list)
     return arena_list
 
+def advanced_init():
 
-for i in range(0,50):
-    generate_obstacle(arena_list)
-    arena.update()
+    for i in range(0,50):
+         generate_obstacle(arena_list)
+         arena.update()
     
 
-for i in range(0,5):
-    generate_big_obstacle(arena_list)
-    arena.update()
+    for i in range(0,5):
+         generate_big_obstacle(arena_list)
+         arena.update()
 
-print arena_list
+    print arena_list
 
 #robot = arena.create_oval(50, 500, 30, 480, outline="green", fill="green", width=1)
-arena.pack()
+    arena.pack()
 
-arena.update_idletasks()
-speed=0.1
+    arena.update_idletasks()
+    speed=0.1
 
-window2.mainloop() # runs everything
+    window2.mainloop() # runs everything
 #window1= Tk()
