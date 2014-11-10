@@ -2,7 +2,12 @@ from Tkinter import *
 import time
 import random
 import os
-
+os_name=os.name
+if os_name == "posix":
+  speed=0.001
+else:
+  speed=0.01
+print speed
 arena_list = [[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\
               [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\
                [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\
