@@ -107,8 +107,8 @@ def advanced_init():
     speed=0.1
 
     window2.mainloop() # runs everything
-<<<<<<< HEAD
 
 
-=======
->>>>>>> FETCH_HEAD
+
+
+
