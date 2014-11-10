@@ -1,9 +1,12 @@
 from Tkinter import *
 import time
 import random
-import os
-os_name=os.name
-if os_name == "posix":
+
+#block bellow checks for what OS the user is using and if it is Darwin (OSX) then it increases the speed, this is to fix the issue of the robot being very slow on OSX
+import platform
+platform_name=platform.system()
+print platform_name
+if platform_name == "Darwin":
   speed=0.001
 else:
   speed=0.01
@@ -86,6 +89,14 @@ def advanced_init():
          generate_big_obstacle(arena_list, arena)
          arena.update()
 
+
+    for i in range(0,5):
+      generate_traffic_light_object(arena_list,arena)
+      arena.update()
+
+
+
+
     print arena_list
 
     arena.pack()
@@ -94,3 +105,8 @@ def advanced_init():
     speed=0.1
 
     window2.mainloop() # runs everything
+
+
+
+
+
