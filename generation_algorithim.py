@@ -76,11 +76,9 @@ def advanced_init():
 
     print arena_list
 
-#robot = arena.create_oval(50, 500, 30, 480, outline="green", fill="green", width=1)
     arena.pack()
 
     arena.update_idletasks()
     speed=0.1
 
     window2.mainloop() # runs everything
-#window1= Tk()
