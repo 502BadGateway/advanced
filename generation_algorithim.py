@@ -7,107 +7,149 @@ import platform
 platform_name=platform.system()
 print platform_name
 if platform_name == "Darwin":
-  speed=0.001
+	speed=0.001
 else:
-  speed=0.01
+	speed=0.01
 print speed
 arena_list = [[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\
-              [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\
-               [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\
-               [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\
-               [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\
-               [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\
-               [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\
-               [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\
-               [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\
-               [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\
-               [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\
-               [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\
-               [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\
-               [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\
-               [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\
-               [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\
-               [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\
-               [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\
-               [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\
-               [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\
-               [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\
-               [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\
-               [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\
-               [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\
-               [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]
+							[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\
+							 [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\
+							 [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\
+							 [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\
+							 [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\
+							 [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\
+							 [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\
+							 [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\
+							 [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\
+							 [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\
+							 [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\
+							 [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\
+							 [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\
+							 [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\
+							 [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\
+							 [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\
+							 [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\
+							 [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\
+							 [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\
+							 [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\
+							 [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\
+							 [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\
+							 [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\
+							 [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]
 
 def generate_obstacle(arena_list, arena):
-    x_list = random.randint(0,24)           #
-    y_list = random.randint(0,24)
-    if(arena_list[x_list][y_list] == 0):
-        arena_list[x_list][y_list] = 1
-        x_coord0 = x_list * 20
-        y_coord0 = y_list * 20
-        x_coord1 = x_coord0 + 20
-        y_coord1 = y_coord0 + 20
-        obstacle = arena.create_rectangle(x_coord0, y_coord0, x_coord1, y_coord1, fill = "red", outline = "black")
-        
-    else:
-        generate_obstacle(arena_list, arena)
-    return arena_list
+		x_list = random.randint(0,24)           #
+		y_list = random.randint(0,24)
+		if(arena_list[x_list][y_list] == 0):
+				arena_list[x_list][y_list] = 1
+				x_coord0 = x_list * 20
+				y_coord0 = y_list * 20
+				x_coord1 = x_coord0 + 20
+				y_coord1 = y_coord0 + 20
+				obstacle = arena.create_rectangle(x_coord0, y_coord0, x_coord1, y_coord1, fill = "red", outline = "black")
+				
+		else:
+				generate_obstacle(arena_list, arena)
+		return arena_list
 
 def generate_big_obstacle(arena_list, arena):
-    x_list = random.randint(0,24)
-    y_list = random.randint(0,24)
-    if(x_list < 23 and y_list < 23 and arena_list[x_list][y_list] == 0 and arena_list[x_list + 1][y_list] == 0 and arena_list[x_list][y_list + 1] == 0 and arena_list[x_list + 1][y_list + 1] == 0):
-        arena_list[x_list][y_list] = 2
-        arena_list[x_list + 1][y_list] = 2
-        arena_list[x_list][y_list + 1] = 2
-        arena_list[x_list + 1][y_list + 1] = 2
-        x_coord0 = x_list * 20
-        y_coord0 = y_list * 20
-        x_coord1 = x_coord0 + 40
-        y_coord1 = y_coord0 + 40
-        obstacle = arena.create_rectangle(x_coord0, y_coord0, x_coord1, y_coord1, fill = "green", outline = "black")
-        arena.update()
-        time.sleep(0.1)
-    else:
-        generate_big_obstacle(arena_list, arena)
-    return arena_list
+		x_list = random.randint(0,24)
+		y_list = random.randint(0,24)
+		if(x_list < 23 and y_list < 23 and arena_list[x_list][y_list] == 0 and arena_list[x_list + 1][y_list] == 0 and arena_list[x_list][y_list + 1] == 0 and arena_list[x_list + 1][y_list + 1] == 0):
+				arena_list[x_list][y_list] = 2
+				arena_list[x_list + 1][y_list] = 2
+				arena_list[x_list][y_list + 1] = 2
+				arena_list[x_list + 1][y_list + 1] = 2
+				x_coord0 = x_list * 20
+				y_coord0 = y_list * 20
+				x_coord1 = x_coord0 + 40
+				y_coord1 = y_coord0 + 40
+				obstacle = arena.create_rectangle(x_coord0, y_coord0, x_coord1, y_coord1, fill = "green", outline = "black")
+				arena.update()
+				time.sleep(0.1)
+		else:
+				generate_big_obstacle(arena_list, arena)
+		return arena_list
 def generate_traffic_light_object(arena_list,arena):
-  print "traffics light"
+	print "traffics light"
+	x_list = random.randint(0,24)
+	y_list = random.randint(0,24)
+	if (arena_list[x_list][y_list] == 0):
+		arena_list[x_list][y_list] = 3
+		arena_list[x_list][y_list + 1] = 3
+		arena_list[x_list][y_list + 2] = 3
+		x_coord0 = x_list * 20
+		y_coord0 = y_list * 20
+		x_coord1 = x_coord0 + 60
+		y_coord1 = y_coord0 + 20
+		obstacle = arena.create_rectangle(x_coord0, y_coord0, x_coord1, y_coord1, fill = "pink")
+		arena.update()
+	else:
+		generate_traffic_light_object(arena_list,arena)
 def generate_mud_object(arena_list,arena):
-  print "mud"
+	print "mud"
+	x_list = random.randint(0,24)
+	y_list = random.randint(0,24)
+	if(x_list < 23 and y_list < 23 and arena_list[x_list][y_list] == 0 and arena_list[x_list + 1][y_list] == 0 and arena_list[x_list][y_list + 1] == 0 and arena_list[x_list + 1][y_list + 1] == 0):
+			arena_list[x_list][y_list] = 4
+			arena_list[x_list + 1][y_list] = 4
+			arena_list[x_list][y_list + 1] = 4
+			arena_list[x_list + 1][y_list + 1] = 3
+			x_coord0 = x_list * 20
+			y_coord0 = y_list * 20
+			x_coord1 = x_coord0 + 40
+			y_coord1 = y_coord0 + 40
+			obstacle = arena.create_rectangle(x_coord0, y_coord0, x_coord1, y_coord1, fill = "brown", outline = "black")
+			arena.update()
+			time.sleep(0.1)
+	else:
+		generate_mud_object(arena_list,arena)
 def generate_speed_boost_object(arena_list,arena):
-  print "speed boost"
+	print "speed boost"
+	x_list = random.randint(0,24)
+	y_list = random.randint(0,24)
+	if (arena_list[x_list][y_list] == 0):
+		arena_list[x_list][y_list] = 5
+		x_coord0 = x_list * 20
+		y_coord0 = y_list * 20
+		x_coord1 = x_coord0 + 20
+		y_coord1 = x_coord0 + 20
+		obstacle = arena.create_rectangle(x_coord0, y_coord0, x_coord1, y_coord1, fill = "orange", outline = "black")
+		arena.update()
+	else:
+		generate_speed_boost_object(arena_list,arena)
 def advanced_init():
-    window2 = Tk()
-    arena = Canvas(window2, width = 500, height = 500, bg = 'white') # generates a canvas of 500px x 500px for the arena
-    for i in range(0,50):
-      generate_obstacle(arena_list, arena)
-      arena.update()
-    
+		window2 = Tk()
+		arena = Canvas(window2, width = 500, height = 500, bg = 'white') # generates a canvas of 500px x 500px for the arena
+		for i in range(0,30):
+			generate_obstacle(arena_list, arena)
+			arena.update()
+		
 
-    for i in range(0,5):
-      generate_big_obstacle(arena_list, arena)
-      arena.update()
+		for i in range(0,5):
+			generate_big_obstacle(arena_list, arena)
+			arena.update()
 
-    for i in range(0,3):
-      generate_traffic_light_object(arena_list,arena)
-      arena.update()
+		for i in range(0,3):
+			generate_traffic_light_object(arena_list,arena)
+			arena.update()
 
-    for i in range(0,3):
-      generate_mud_object(arena_list,arena)
-      arena.update()
+		for i in range(0,3):
+			generate_mud_object(arena_list,arena)
+			arena.update()
 
-    for i in range(0,3):
-      generate_speed_boost_object(arena_list,arena)
-      arena.update()
+		for i in range(0,3):
+			generate_speed_boost_object(arena_list,arena)
+			arena.update()
 
-    print arena_list
+		print arena_list
 
-    arena.pack()
+		arena.pack()
 
-    arena.update_idletasks()
-    speed=0.1
+		arena.update_idletasks()
+		speed=0.1
 
-    window2.mainloop() # runs everything
+		window2.mainloop() # runs everything
 
 
 
