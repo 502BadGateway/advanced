@@ -430,15 +430,15 @@ def intermdiate():
 
 #key = Canvas(window, width = 500, height = 100, bg = 'grey') # generates a canvas for our key and UI area
 #key.pack()
-def callback_basic(): # calls the bacis function when the user clicks the button
+def callback_basic(): # calls the basic function when the user clicks the button
 	basic()
-def callback_intermediate(): # calls the intermidiate function  when user clicks the button 
+def callback_intermediate(): # calls the intermediate function  when user clicks the button 
 	intermdiate() 
 def callback_advanced():
 	generation_algorithim.advanced_init()
-c = Button(window1, text="Advanced", command=callback_advanced) # creates a button that willl take the user to the adanced task
+c = Button(window1, text="Advanced", command=callback_advanced) # creates a button that will take the user to the advanced task
 c.pack(side=RIGHT)
-b = Button(window1, text="Intermdiate", command=callback_intermediate) #  creates a button that will take the user to the intermidiate task
+b = Button(window1, text="Intermediate", command=callback_intermediate) #  creates a button that will take the user to the intermediate task
 b.pack(side=RIGHT)
 a = Button(window1, text="Basic", command=callback_basic) # creates a button that will take the user to the basic task
 a.pack(side=RIGHT)
