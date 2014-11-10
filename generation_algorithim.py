@@ -76,8 +76,8 @@ def generate_traffic_light_object(arena_list,arena):
 	y_list = random.randint(0,24)
 	if (arena_list[x_list][y_list] == 0):
 		arena_list[x_list][y_list] = 3
-		arena_list[x_list][y_list + 1] = 3
-		arena_list[x_list][y_list + 2] = 3
+		arena_list[x_list + 1][y_list] = 3
+		arena_list[x_list + 2][y_list] = 3
 		x_coord0 = x_list * 20
 		y_coord0 = y_list * 20
 		x_coord1 = x_coord0 + 60
