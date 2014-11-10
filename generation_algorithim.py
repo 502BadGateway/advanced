@@ -1,6 +1,7 @@
 from Tkinter import *
 import time
 import random
+import os
 
 arena_list = [[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\
               [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\
@@ -61,7 +62,12 @@ def generate_big_obstacle(arena_list, arena):
     else:
         generate_big_obstacle(arena_list, arena)
     return arena_list
-
+def generate_traffic_light_object(arena_list,arena):
+  print "traffics light"
+def generate_mud_object(arena_list,arena):
+  print "mud"
+def speed_boost_object(arena_list,arena):
+  print "speed boost"
 def advanced_init():
     window2 = Tk()
     arena = Canvas(window2, width = 500, height = 500, bg = 'white') # generates a canvas of 500px x 500px for the arena
@@ -84,3 +90,4 @@ def advanced_init():
 
     window2.mainloop() # runs everything
 #window1= Tk()
+
