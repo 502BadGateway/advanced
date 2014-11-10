@@ -444,3 +444,5 @@ a = Button(window1, text="Basic", command=callback_basic) # creates a button tha
 a.pack(side=RIGHT)
 
 mainloop()
+window2 = Tk()
+arena = Canvas(window2, width = 500, height = 500, bg = 'white') # generates a canvas of 500px x 500px for the arena
