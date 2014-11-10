@@ -74,27 +74,31 @@ def generate_traffic_light_object(arena_list,arena):
   print "traffics light"
 def generate_mud_object(arena_list,arena):
   print "mud"
-def speed_boost_object(arena_list,arena):
+def generate_speed_boost_object(arena_list,arena):
   print "speed boost"
 def advanced_init():
     window2 = Tk()
     arena = Canvas(window2, width = 500, height = 500, bg = 'white') # generates a canvas of 500px x 500px for the arena
     for i in range(0,50):
-         generate_obstacle(arena_list, arena)
-         arena.update()
+      generate_obstacle(arena_list, arena)
+      arena.update()
     
 
     for i in range(0,5):
-         generate_big_obstacle(arena_list, arena)
-         arena.update()
+      generate_big_obstacle(arena_list, arena)
+      arena.update()
 
-
-    for i in range(0,5):
+    for i in range(0,3):
       generate_traffic_light_object(arena_list,arena)
       arena.update()
 
+    for i in range(0,3):
+      generate_mud_object(arena_list,arena)
+      arena.update()
 
-
+    for i in range(0,3):
+      generate_speed_boost_object(arena_list,arena)
+      arena.update()
 
     print arena_list
 
