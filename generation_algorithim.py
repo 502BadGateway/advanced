@@ -11,6 +11,13 @@ if platform_name == "Darwin":
 else:
 	speed=0.01
 print speed
+
+"""
+Below is a multi-dimensional list of lists. It is essentially 25 lists constaining 25 elements. 
+This gives us a direct reference to a grid of 25x25. 
+Due to the fact our arena is 500px by 500px it means each element represents a 20px x 20px area.
+We can reference any area using the notation "arena_list[x][y] and access the stuff inside.
+"""
 arena_list = [[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\
 							[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\
 							 [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\
@@ -36,7 +43,20 @@ arena_list = [[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\
 							 [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\
 							 [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\
 							 [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]
-
+"""
+Below is the function to randomly generate a object. 
+The majority of obstacles are generated the same way, just with different conditions.
+This will randomly pick two numbers between 0 and 24, which are saved into two different variables (x_list and y_list).
+We use these variables to access the list using arena_list[x_list][y_list]
+We then check if that element is empty (or "0")
+If it isn't, we simple run the function again from the top, trying a different spot. 
+If it is, we change it to a number, to represent the object which is now in that area.
+We then use those two variables to create an object on the Tkinter GUI.
+This works because x_list/y_list x 20 is actually the coords on the window for the object. 
+e.g. x_list = 6 and y_list = 10 means that we have the coords on canvas 120 x 200. 
+Using this top corner, we generate the rest of the coords, by adding 20.
+Finally we generate an object using the coords we created using the x_list and y_list numbers.
+"""
 def generate_obstacle(arena_list, arena):
 		x_list = random.randint(0,24)           #
 		y_list = random.randint(0,24)
