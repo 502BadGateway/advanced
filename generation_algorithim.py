@@ -155,9 +155,6 @@ def advanced_init():
     		generate_traffic_light_object(arena_list,arena)
     		arena.update()
 
-
-
-
     	for i in range(0,3):
     		generate_mud_object(arena_list,arena)
     		arena.update()
@@ -166,7 +163,7 @@ def advanced_init():
     		generate_speed_boost_object(arena_list,arena)
     		arena.update()
 
-        robot.spawn_robot(arena)
+        robot1 = robot.spawn_robot(arena)
 
     	print arena_list
         
@@ -175,6 +172,28 @@ def advanced_init():
 
     	arena.update_idletasks()
     	speed=0.1
+
+
+        go = True
+
+        while go == True:
+            print go
+            direction = 0
+            x0,y0,x1,y1 = arena.coords(robot1)
+            if x0 >= 480:
+                go = False
+            elif x0 <= 20:
+                go = False
+            elif y0 >= 480:
+                go = False
+            elif y0 <= 20:
+                go =False
+            robot.check(robot1, direction, int(x0),int(y0))
+            robot.move(robot1, direction, arena)
+            arena.update()
+            time.sleep(0.1)
+        print  arena.coords(robot1)
+        print go
 
     	window2.mainloop() # runs everything
 

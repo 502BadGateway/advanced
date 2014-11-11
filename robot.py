@@ -60,33 +60,33 @@ options = {                   #Dictionary containing the object numbers and the 
         5 : object_behaviours.boost
         }
 
-def check(direction, x, y):
+def check(robot, direction, x, y):
     if direction == 0:    # If the direction is upward...  
         check_y = (y /20) - 1
         check_x = (x /20) #Then check upward!
         if generation_algorithim.arena_list[check_x][check_y] != 0:
-            options[generation_algorithim.arena_list[check_x][check_y]]()
+            options[generation_algorithim.arena_list[check_x][check_y]](robot, direction,x, y)
         else:
             return
     elif direction == 1:    # If the direction is right...  
         check_y = (y /20) 
         check_x = (x /20) + 1 #Then check right!
         if generation_algorithim.arena_list[check_x][check_y] != 0:
-            options[generation_algorithim.arena_list[check_x][check_y]]()
+            options[generation_algorithim.arena_list[check_x][check_y]](robot, direction,x, y)
         else:
             return
     elif direction == 2:    # If the direction is right...  
         check_y = (y /20) + 1 
         check_x = (x /20) #Then check right!
         if generation_algorithim.arena_list[check_x][check_y] != 0:
-            options[generation_algorithim.arena_list[check_x][check_y]]()
+            options[generation_algorithim.arena_list[check_x][check_y]](robot, direction,x, y)
         else:
             return
     elif direction == 3:    # If the direction is right...  
         check_y = (y /20)  
         check_x = (x /20) - 1 #Then check right!
         if generation_algorithim.arena_list[check_x][check_y] != 0:
-            options[generation_algorithim.arena_list[check_x][check_y]]()
+            options[generation_algorithim.arena_list[check_x][check_y]](robot, direction,x, y)
         else:
             return
         
@@ -100,3 +100,6 @@ def move(robot,direction,  arena):   #Moves the robot 20 spaces to where ever th
         arena.move(robot, 0, 20)
     elif direction == 3:
         arena.move(robot, -20, 0)
+
+    print "moved"
+
