@@ -168,7 +168,7 @@ def traffic_light_change(traffic_x_coord0,traffic_y_coord0):
 	traffic_y_coord1 = traffic_y_coord0 + 1
 
 	obstacle_red_traffic = arena.create_rectangle(traffic_x_coord0, traffic_y_coord0, traffic_x_coord1, traffic_y_coord1, fill = "red", outline = "black")
-	 
+	# we could either do a pause or change robot speed to 0 here 
 	arena.delete(obstacle_red_traffic)
 	arena.update()
 def advanced_init():
