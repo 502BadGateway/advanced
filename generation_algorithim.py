@@ -156,7 +156,6 @@ def advanced_init():
     		arena.update()
 
 
-        robot.spawn_robot(arena)
 
 
     	for i in range(0,3):
@@ -166,6 +165,8 @@ def advanced_init():
     	for i in range(0,3):
     		generate_speed_boost_object(arena_list,arena)
     		arena.update()
+
+        robot.spawn_robot(arena)
 
     	print arena_list
         

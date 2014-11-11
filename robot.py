@@ -41,8 +41,8 @@ def spawn_robot(arena):                  #Chooses a random place to spawn the ro
     y_list = random.randint(0,24)
     x_coord0 = x_list * 20
     y_coord0 = y_list * 20
-    x_coord1 = x_list + 20 
-    y_coord1 = y_list + 20
+    x_coord1 = x_coord0 + 20 
+    y_coord1 = y_coord0 + 20
     print len(generation_algorithim.arena_list)
     if generation_algorithim.arena_list[x_list][y_list] != 0:      #If there is something in the element. Dont spawn there.
         spawn_robot(arena)
