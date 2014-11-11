@@ -7,9 +7,11 @@ import platform
 platform_name=platform.system()
 print platform_name
 if platform_name == "Darwin":
-	speed=0.001
+	speed1=0.001
+	speed2=0.001
 else:
-	speed=0.01
+	speed2=0.01
+	speed2=0.01
 print speed
 traffic_list=[]
 global 	call_num
