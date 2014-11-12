@@ -196,13 +196,12 @@ def advanced_init():
 
         robot1 = robot.spawn_robot(arena)
 
-<<<<<<< HEAD
 		arena.update_idletasks()
 		speed1=0.1
-=======
+
     	print arena_list
         
->>>>>>> FETCH_HEAD
+
 
     	arena.pack()
 
