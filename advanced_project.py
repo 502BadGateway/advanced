@@ -98,7 +98,7 @@ def intermdiate():
 	speed1=0.01
 	robot = arena.create_oval(50, 500, 30, 480, outline="black", fill="darkgreen", width=1)
 
-	random_number=random.randint(0,6) 
+	random_number=random.randint(1,6) 
 	gif1 = PhotoImage(file = 'flag.gif')
 	arena.create_image(500, 0, image = gif1, anchor = NE,)
 	key_panel = PhotoImage(file = 'advance_key_green.gif')
