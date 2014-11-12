@@ -37,11 +37,11 @@ class Robot:
         return 
 
     def regular (self):       #If there is a regular object the turn to a random direction 
-        self.random_direction(selfdirection)
+        self.random_direction(self.direction)
         return
     
     def large (self):         #Pretty much the same as the regular object. we dont need to behave any differently really.
-        self.random_direction(selfdirection)
+        self.random_direction(self.direction)
         return
     
     def light (self):
@@ -50,28 +50,29 @@ class Robot:
     
     
     def mud (self):
-        self.decrease_speed(self)
+        self.decrease_speed()
         return
     
     def boost(self):
-        self.increase_speed(self)
+        self.increase_speed()
         return
 
 
-    def increase_speed():       #Increases the speed
-        speed = speed*2
-        return speed            #Yes speed is a global, but it might be easier in the future if we return something.
+    def increase_speed(self):       #Increases the speed
+        self.speed = self.speed*2
+        return self.speed            #Yes speed is a global, but it might be easier in the future if we return something.
     
-    def decrease_speed():
-        speed = speed/2
-        return speed
+    def decrease_speed(self):
+        self.speed = self.speed/2
+        return self.speed
     
-    def random_direction(direction):        #Chooses a random direction for the robot. Considers a given direction if given.
+    def random_direction(self,direction):        #Chooses a random direction for the robot. Considers a given direction if given.
         new_direction = random.randint(0,3)
     
         if new_direction == direction:     #If we managed to choose the direction it said not too, choose another.
-            random_direction(direction)
+            self.random_direction(direction)
         else:
+            self.direction = new_direction
             return new_direction
     
     def spawn_robot(self,arena):                  #Chooses a random place to spawn the robot.
@@ -97,12 +98,15 @@ class Robot:
     def check(self):
         print self.coords
         if self.direction == 0:    # If the direction is upward...  
-            check_y = (int(self.coords[0] /20)) - 1
-            check_x = (int(self.coords[1] /20)) #Then check upward!
-            if generation_algorithim.arena_list[check_x][check_y] != 0:
-                print "something under!"
+            check_y = (int(self.coords[1] /20))-1
+            check_x = (int(self.coords[0] /20)) #Then check upward!
+            print "checking upward..."
+            print "check X:"+str(check_x)
+            print "check Y:"+str(check_y)
+            if generation_algorithim.arena_list[check_x][check_y] != 0: 
                 if generation_algorithim.arena_list[check_x][check_y] == 1:
-                    self.invalid()
+                    print "called regular"
+                    self.regular()
                 elif generation_algorithim.arena_list[check_x][check_y] == 2:
                     self.large()
                 elif generation_algorithim.arena_list[check_x][check_y] == 3:

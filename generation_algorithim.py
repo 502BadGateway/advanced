@@ -25,6 +25,7 @@ Below is a multi-dimensional list of lists. It is essentially 25 lists constaini
 This gives us a direct reference to a grid of 25x25. 
 Due to the fact our arena is 500px by 500px it means each element represents a 20px x 20px area.
 We can reference any area using the notation "arena_list[x][y] and access the stuff inside.
+
 """
 arena_list = [[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\
         					[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\
