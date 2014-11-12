@@ -159,9 +159,13 @@ def genertate_red_traffic_light(arena_list,arena): # this function gives the tra
 	elif call_num == 2:
 		traffic_x_coord0 = traffic_list[3]
 		traffic_y_coord0 = traffic_list[4]
+
+		traffic_light_change(traffic_x_coord0,traffic_y_coord0)
 	elif call_num == 3:
 		traffic_x_coord0 = traffic_list[5]
 		traffic_y_coord0 = traffic_list[6]
+
+		traffic_light_change(traffic_x_coord0,traffic_y_coord0)
 	else:
 		print "no more in list"
 
@@ -172,7 +176,7 @@ def traffic_light_change(traffic_x_coord0,traffic_y_coord0):
 
 	obstacle_red_traffic = arena.create_rectangle(traffic_x_coord0, traffic_y_coord0, traffic_x_coord1, traffic_y_coord1, fill = "red", outline = "black")
 	speed1=0
-	
+	time.sleep(2)#this is temporary untill I find out a better way of doing it
 	# we could either do a pause or change robot speed1 to 0 here 
 	arena.delete(obstacle_red_traffic)
 	arena.update()
