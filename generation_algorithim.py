@@ -111,7 +111,7 @@ def generate_traffic_light_object(arena_list,arena,traffic_list):
 		arena_list[x_list + 2][y_list] = 3
 		x_coord0 = x_list * 20
 		y_coord0 = y_list * 20
-		x_coord1 = x_coord0 + 20
+		x_coord1 = x_coord0 + 60
 		y_coord1 = y_coord0 + 20
 		obstacle = arena.create_rectangle(x_coord0, y_coord0, x_coord1, y_coord1, fill = "green")
 		arena.update()
