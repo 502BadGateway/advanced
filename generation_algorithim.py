@@ -103,7 +103,7 @@ def generate_traffic_light_object(arena_list,arena,traffic_list):
 	print "traffics light"
 	x_list = random.randint(0,24)
 	y_list = random.randint(0,24)
-	traffic_list.append(x_list)
+	traffic_list.append(x_list) #these 2 lines put the coordinates of the traffic lights in an array so they can be referenced later
 	traffic_list.append(y_list)
 	if (x_list< 22 and arena_list[x_list][y_list] == 0):
 		arena_list[x_list][y_list] = 3
@@ -154,10 +154,10 @@ def generate_speed1_boost_object(arena_list,arena):
 def genertate_red_traffic_light(arena_list,arena): # this function gives the traffic light locations and it turns the traffic light red
 	print "red"
 	if call_num == 1:
-		traffic_x_coord0 = traffic_list[1]
+		traffic_x_coord0 = traffic_list[1] #this gets the coordinates from the array so they an be replaced by red 
 		traffic_y_coord0 = traffic_list[2]
 
-		traffic_light_change(traffic_x_coord0,traffic_y_coord0)
+		traffic_light_change(traffic_x_coord0,traffic_y_coord0) #call the function that changes the traffic light
 	elif call_num == 2:
 		traffic_x_coord0 = traffic_list[3]
 		traffic_y_coord0 = traffic_list[4]
