@@ -4,6 +4,7 @@ import time # imports the time moduale
 import random
 import generation_algorithim
 
+
 def traffic_light(arena,key_panel): #Danny
 		traffic_light = random.randint(0,1000)
 		if (traffic_light < 5):
