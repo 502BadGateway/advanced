@@ -29,6 +29,7 @@ class Robot:
 
 
     def __init__(self):
+        self.direction = random.randint(0,3)
         return
 
 
@@ -68,9 +69,9 @@ class Robot:
     
     def random_direction(self,direction):        #Chooses a random direction for the robot. Considers a given direction if given.
         new_direction = random.randint(0,3)
-    
-        if new_direction == direction:     #If we managed to choose the direction it said not too, choose another.
-            self.random_direction(direction)
+        print "new direction: "+str(new_direction)
+        if new_direction == self.direction:     #If we managed to choose the direction it said not too, choose another.
+            self.random_direction(self.direction)
         else:
             self.direction = new_direction
             return new_direction
@@ -97,6 +98,9 @@ class Robot:
     
     def check(self):
         print self.coords
+        if int(self.coords[1]) /20 -1 < 0 or int(self.coords[0]) /20 -1 < 0 or int(self.coords[1]) /20 +1 >= 25 or int(self.coords[0]) /20 +1 >= 25 :
+            self.random_direction(self.direction)
+            return
         if self.direction == 0:    # If the direction is upward...  
             check_y = (int(self.coords[1] /20))-1
             check_x = (int(self.coords[0] /20)) #Then check upward!
@@ -117,25 +121,55 @@ class Robot:
                     self.boost()
             else:
                 return
-        elif direction == 1:    # If the direction is right...  
-            check_y = (int(self.coords[0] /20)) 
-            check_x = (int(self.coords[1] /20)) + 1 #Then check right!
-            if generation_algorithim.arena_list[check_x][check_y] != 0:
-                options[generation_algorithim.arena_list[check_x][check_y]]()
-            else:
-                    return
-        elif direction == 2:    # If the direction is right...  
-            check_y = (int(self.coords[0] /20)) + 1 
-            check_x = (int(self.coords[1] /20)) #Then check right!
-            if generation_algorithim.arena_list[check_x][check_y] != 0:
-                options[generation_algorithim.arena_list[check_x][check_y]]()
+        elif self.direction == 1:    # If the direction is right...  
+            check_y = (int(self.coords[1] /20)) 
+            check_x = (int(self.coords[0] /20)) + 1 #Then check right!
+            if generation_algorithim.arena_list[check_x][check_y] != 0: 
+                if generation_algorithim.arena_list[check_x][check_y] == 1:
+                    print "called regular"
+                    self.regular()
+                elif generation_algorithim.arena_list[check_x][check_y] == 2:
+                    self.large()
+                elif generation_algorithim.arena_list[check_x][check_y] == 3:
+                    self.light()
+                elif generation_algorithim.arena_list[check_x][check_y] == 4:
+                    self.mud()
+                elif generation_algorithim.arena_list[check_x][check_y] == 5:
+                    self.boost()
             else:
                 return
-        elif direction == 3:    # If the direction is right...  
-            check_y = (int(self.coords[0] /20))  
-            check_x = (int(self.coords[1] /20)) - 1 #Then check right!
-            if generation_algorithim.arena_list[check_x][check_y] != 0:
-                options[generation_algorithim.arena_list[check_x][check_y]](robot, direction,x, y)
+        elif self.direction == 2:    # If the direction is right...  
+            check_y = (int(self.coords[1] /20)) + 1 
+            check_x = (int(self.coords[0] /20)) #Then check right!
+            if generation_algorithim.arena_list[check_x][check_y] != 0: 
+                if generation_algorithim.arena_list[check_x][check_y] == 1:
+                    print "called regular"
+                    self.regular()
+                elif generation_algorithim.arena_list[check_x][check_y] == 2:
+                    self.large()
+                elif generation_algorithim.arena_list[check_x][check_y] == 3:
+                    self.light()
+                elif generation_algorithim.arena_list[check_x][check_y] == 4:
+                    self.mud()
+                elif generation_algorithim.arena_list[check_x][check_y] == 5:
+                    self.boost()
+            else:
+                return
+        elif self.direction == 3:    # If the direction is right...  
+            check_y = (int(self.coords[1] /20))  
+            check_x = (int(self.coords[0] /20)) - 1 #Then check right!
+            if generation_algorithim.arena_list[check_x][check_y] != 0: 
+                if generation_algorithim.arena_list[check_x][check_y] == 1:
+                    print "called regular"
+                    self.regular()
+                elif generation_algorithim.arena_list[check_x][check_y] == 2:
+                    self.large()
+                elif generation_algorithim.arena_list[check_x][check_y] == 3:
+                    self.light()
+                elif generation_algorithim.arena_list[check_x][check_y] == 4:
+                    self.mud()
+                elif generation_algorithim.arena_list[check_x][check_y] == 5:
+                    self.boost()
             else:
                 return
     

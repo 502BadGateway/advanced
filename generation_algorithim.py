@@ -147,7 +147,7 @@ def generate_speed_boost_object(arena_list,arena):
     	x_coord1 = x_coord0 + 20
     	y_coord1 = y_coord0 + 20
     	obstacle = arena.create_rectangle(x_coord0, y_coord0, x_coord1, y_coord1, fill = "orange", outline = "green")
-
+ 
     	arena.update()
     else:
     	generate_speed_boost_object(arena_list,arena)
@@ -213,15 +213,23 @@ def advanced_init():
 
         while go == True:
             print go
-            robot1.direction = 0
-            if robot1.coords[0] >= 480:
-                go = False
-            elif robot1.coords[0] <= 20:
-                go = False
+            print  arena.coords(robot1)
+            if robot1.coords[2] >= 480:
+                print "hit a wall first"
+                robot1.random_direction(robot1.direction)
+                robot1.move(arena)
+            elif robot1.coords[0] < 20:
+                print "hit a wall second"
+                robot1.random_direction(robot1.direction)
+                robot1.move(arena)
             elif robot1.coords[1] >= 480:
-                go = False
+                print "hit a wall third"
+                robot1.random_direction(robot1.direction)
+                robot1.move(arena)
             elif robot1.coords[1] <= 20:
-                go =False
+                print "hit a wall fourth"
+                robot1.random_direction(robot1.direction)
+                robot1.move(arena)
             robot1.check()
             robot1.move(arena)
             arena.update()
