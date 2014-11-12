@@ -20,13 +20,13 @@ import object_behaviours
 
 
 
-def increase_speed():       #Increases the speed
-    speed = speed *2
-    return speed            #Yes speed is a global, but it might be easier in the future if we return something.
+def increase_speed1():       #Increases the speed1
+    speed11 = speed11 *2
+    return speed11            #Yes speed1 is a global, but it might be easier in the future if we return something.
 
-def decrease_speed():
-    speed = speed /2
-    return speed
+def decrease_speed1():
+    speed1 = speed1 /2
+    return speed1
 
 def random_direction(direction):        #Chooses a random direction for the robot. Considers a given direction if given.
     new_direction = random.randint(0,3)

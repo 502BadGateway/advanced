@@ -2,17 +2,17 @@ from Tkinter import *
 import time
 import random
 
-#block bellow checks for what OS the user is using and if it is Darwin (OSX) then it increases the speed, this is to fix the issue of the robot being very slow on OSX
+#block bellow checks for what OS the user is using and if it is Darwin (OSX) then it increases the speed1, this is to fix the issue of the robot being very slow on OSX
 import platform
 platform_name=platform.system()
 print platform_name
 if platform_name == "Darwin":
-	speed1=0.001
-	speed2=0.001
+	speed11=0.001
+	speed12=0.001
 else:
-	speed2=0.01
-	speed2=0.01
-print speed
+	speed12=0.01
+	speed12=0.01
+print speed1
 traffic_list=[]
 global 	call_num
 call_num=1
@@ -133,8 +133,8 @@ def generate_mud_object(arena_list,arena):
 			time.sleep(0.1)
 	else:
 		generate_mud_object(arena_list,arena)
-def generate_speed_boost_object(arena_list,arena):
-	print "speed boost"
+def generate_speed1_boost_object(arena_list,arena):
+	print "speed1 boost"
 	x_list = random.randint(0,24)
 	y_list = random.randint(0,24)
 	if (arena_list[x_list][y_list] == 0):
@@ -147,7 +147,7 @@ def generate_speed_boost_object(arena_list,arena):
 
 		arena.update()
 	else:
-		generate_speed_boost_object(arena_list,arena)
+		generate_speed1_boost_object(arena_list,arena)
 def genertate_red_traffic_light(arena_list,arena): # this function gives the traffic light locations and it turns the traffic light red
 	print "red"
 	if call_num == 1:
@@ -170,7 +170,7 @@ def traffic_light_change(traffic_x_coord0,traffic_y_coord0):
 	traffic_y_coord1 = traffic_y_coord0 + 1
 
 	obstacle_red_traffic = arena.create_rectangle(traffic_x_coord0, traffic_y_coord0, traffic_x_coord1, traffic_y_coord1, fill = "red", outline = "black")
-	# we could either do a pause or change robot speed to 0 here 
+	# we could either do a pause or change robot speed1 to 0 here 
 	arena.delete(obstacle_red_traffic)
 	arena.update()
 def advanced_init():
@@ -186,7 +186,7 @@ def advanced_init():
 			generate_traffic_light_object(arena_list,arena,traffic_list)
 			arena.update()
 		for i in range(0,3):
-			generate_speed_boost_object(arena_list,arena)
+			generate_speed1_boost_object(arena_list,arena)
 			arena.update()
 		for i in range(0,30):
 			generate_obstacle(arena_list, arena)
@@ -196,7 +196,7 @@ def advanced_init():
 		arena.pack()
 
 		arena.update_idletasks()
-		speed=0.1
+		speed1=0.1
 
 		window2.mainloop() # runs everything
 
