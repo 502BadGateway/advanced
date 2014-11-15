@@ -21,8 +21,8 @@ import generation_algorithim
 
 
 def increase_speed1():       #Increases the speed1
-    speed11 = speed11 *2
-    return speed11            #Yes speed1 is a global, but it might be easier in the future if we return something.
+    speed1 = speed11 *2
+    return speed1            #Yes speed1 is a global, but it might be easier in the future if we return something.
 
 def decrease_speed1():
     speed1 = speed1 /2

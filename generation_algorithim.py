@@ -178,7 +178,7 @@ def traffic_light_change(traffic_x_coord0,traffic_y_coord0):
 
 	obstacle_red_traffic = arena.create_rectangle(traffic_x_coord0, traffic_y_coord0, traffic_x_coord1, traffic_y_coord1, fill = "red", outline = "black")
 	#robot.speed1=0 # removed unitll needed for 2 robtos
-	time.sleep(2)#this is temporary untill I find out a better way of doing it
+	#time.sleep(2)#this is temporary untill I find out a better way of doing it
 	# we could either do a pause or change robot speed1 to 0 here 
 	arena.delete(obstacle_red_traffic)
 	#robot.speed1=speed # removed untill needed for 2 robots
