@@ -19,7 +19,7 @@ def large (bot, direction,  x,y):         #Pretty much the same as the regular o
     return
 
 def light (bot, direction,  x,y):
-    #generation_algorithim.generate_red_traffic_light(direction)
+    generation_algorithim.generate_red_traffic_light(direction)
     #TODO Can't do this yet, waiting on Phil to impliment traffic light things.
     return
 
